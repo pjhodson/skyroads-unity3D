@@ -7,6 +7,8 @@ Project("{EBD974FD-AEE7-F26F-476E-9F918AB74492}") = "SkyRoads", "Assembly-CSharp
 EndProject
 Project("{EBD974FD-AEE7-F26F-476E-9F918AB74492}") = "SkyRoads", "Assembly-UnityScript-firstpass.unityproj", "{17ACA0E3-B8F7-8BE6-AC7B-EA5F9CEC28EE}"
 EndProject
+Project("{EBD974FD-AEE7-F26F-476E-9F918AB74492}") = "SkyRoads", "Assembly-UnityScript.unityproj", "{A07B4D37-941C-AB45-02E8-0F57B2E5CED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,15 @@ Global
 		{17ACA0E3-B8F7-8BE6-AC7B-EA5F9CEC28EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17ACA0E3-B8F7-8BE6-AC7B-EA5F9CEC28EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17ACA0E3-B8F7-8BE6-AC7B-EA5F9CEC28EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07B4D37-941C-AB45-02E8-0F57B2E5CED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07B4D37-941C-AB45-02E8-0F57B2E5CED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07B4D37-941C-AB45-02E8-0F57B2E5CED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07B4D37-941C-AB45-02E8-0F57B2E5CED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																								GlobalSection(MonoDevelopProperties) = preSolution
+																													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

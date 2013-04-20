@@ -16,6 +16,11 @@ public class motionControl : MonoBehaviour {
 	
 	public bool hasWon = false;
 	public bool dead = false;
+	public bool camUn = false;
+	
+	public Camera mainCam;
+	
+	private Vector3 lastPos;
 	
 	// Use this for initialization
 	void Start () {
@@ -41,19 +46,28 @@ public class motionControl : MonoBehaviour {
 		{
 			rigidbody.AddForce(0,jumpForce,0,ForceMode.Impulse);
 			jumping = true;
-		}		
+		}	
+		
+		if(dead)
+		{
+			mainCam.transform.parent = null;
+			mainCam.transform.position = Vector3.Lerp(mainCam.transform.position,new Vector3(lastPos.x,500,lastPos.z), .01f*Time.deltaTime);
+			mainCam.transform.LookAt (this.gameObject.transform);
+			camUn = true;
+		}
 	}
-	
+
 
 	
 	//This function will trigger the endgame state.
 	void OnTriggerEnter(Collider terrainHit) {
 		if(terrainHit.gameObject.tag == "DEATH")
 		{
-			dead = true;
+			lastPos = this.gameObject.transform.position;
 			this.gameObject.audio.clip = fail;
 			this.gameObject.audio.Play();
 			Debug.Log ("YOU'RE DEAD");
+			dead = true;
 		}
 		
 		if(terrainHit.gameObject.tag == "WIN")
@@ -78,20 +92,5 @@ public class motionControl : MonoBehaviour {
 			}
 			jumping = false;
 		}
-	}
-	
-	/*void OnCollisionStay(Collision collide) {
-		if(collide.gameObject.tag == "Terrain")
-		{
-			jumping = false;
-		}
-	}
-	
-	void OnCollisionExit(Collision collide) {
-		if(collide.gameObject.tag == "Terrain")
-		{
-			falling = true;
-		}
-	}*/
-		
+	}	
 }
