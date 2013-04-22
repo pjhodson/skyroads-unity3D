@@ -28,7 +28,7 @@ public class motionControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
+		Screen.showCursor = false;
 		//We clamp the throttle at desired velocity, which is set in the inspector.
 		throttle = Mathf.Clamp (throttle + 0.5f * Input.GetAxis("Vertical"),0,desiredVelocity);
 		
@@ -78,7 +78,8 @@ public class motionControl : MonoBehaviour {
 			Debug.Log("YOU WIN!");
 			throttle = 0;
 			sideways = 0;
-			rigidbody.velocity = Vector3.zero;
+			mainCam.transform.parent = null;
+			rigidbody.isKinematic = true;
 		}
 	}
 	

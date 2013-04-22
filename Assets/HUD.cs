@@ -7,7 +7,6 @@ public class HUD : MonoBehaviour {
 	private string jumpNot = "Jump Charged";
 	
 	void OnGUI () {
-	
 		if(moCon.jumping == true) { jumpNot = "Charging"; }
 		else jumpNot = "Jump Charged!";
 		
@@ -16,9 +15,14 @@ public class HUD : MonoBehaviour {
 				
 		if(moCon.hasWon == true || moCon.dead == true)
 		{
-			if(GUI.Button (new Rect(Screen.width/2 - 50, Screen.height/2 - 50, 200,100), new GUIContent("Restart")))
+			Screen.showCursor = true;
+			if(GUI.Button (new Rect(Screen.width/2 - 50, Screen.height/2 - 50, 200,50), new GUIContent("Restart")))
 			{
-				Application.LoadLevel(0);
+				Application.LoadLevel("srproj");
+			}
+			if(GUI.Button (new Rect(Screen.width/2-50, Screen.height/2 + 25, 200,50), new GUIContent("Main Menu")))
+			{
+				Application.LoadLevel("mainMenu");
 			}
 		}
 		
